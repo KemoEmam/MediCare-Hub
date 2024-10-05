@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:medi_care_hub/core/themes/styles/app_images.dart';
+import 'package:medi_care_hub/core/themes/styles/app_text_styles.dart';
 
 class DocLogoAndName extends StatelessWidget {
   const DocLogoAndName({super.key});
@@ -15,7 +16,7 @@ class DocLogoAndName extends StatelessWidget {
         SizedBox(
           width: 10.w,
         ),
-        const Text("DocDoc")
+        Text("DocDoc", style: AppTextStyles.interBold24)
       ],
     );
   }
