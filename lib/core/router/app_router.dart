@@ -5,6 +5,9 @@ import 'package:medi_care_hub/features/onboarding/presentation/views/onboarding_
 
 class AppRouter {
   Route<dynamic> onGenerateRoute(RouteSettings settings) {
+    final arguments = settings.arguments;
+    //this arguments to be passed used like this,
+    //Navigator.pushNamed(context, Routes.loginView, arguments: arguments);
     switch (settings.name) {
       case Routes.loginView:
         return MaterialPageRoute(builder: (_) => const LoginView());

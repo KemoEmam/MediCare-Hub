@@ -102,3 +102,4 @@ flutter_assets:
   output_path: lib/core/themes/styles
   filename: app_images.dart
   field_prefix: ''
+  classname: AppImages
