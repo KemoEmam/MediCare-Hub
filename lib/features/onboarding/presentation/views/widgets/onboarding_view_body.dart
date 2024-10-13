@@ -9,16 +9,17 @@ class OnBoardingViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: 30.h),
-      child: SingleChildScrollView(
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 25.h),
         child: Column(
           children: [
             const DocLogoAndName(),
-            SizedBox(height: 40.h),
+            SizedBox(height: 30.h),
             const DoctorImageAndText(),
             SizedBox(height: 18.h),
             const GetStartedAndDescription(),
+            // SizedBox(height: 30.h),
           ],
         ),
       ),
