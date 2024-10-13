@@ -31,6 +31,12 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
+<<<<<<< Updated upstream
+=======
+  flutter_native_splash: ^2.4.1
+  flutter_screenutil: ^5.9.3
+  flutter_svg: ^2.0.10+1
+>>>>>>> Stashed changes
   forbidden_pack:
     git:
       url: https://github.com/KemoEmam/ForbiddenPack.git
@@ -70,6 +76,7 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+<<<<<<< Updated upstream
   # fonts:
   #   - family: Schyler
   #     fonts:
@@ -84,3 +91,39 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+=======
+  fonts:
+    - family: Urbanist
+      fonts:
+        - asset: assets/fonts/Urbanist-Medium.ttf # Add the correct path to your font files
+
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf
+        - asset: assets/fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700
+
+    - family: SF Pro Display
+      fonts:
+        - asset: assets/fonts/SF-Pro-Display-Medium.ttf
+
+    - family: SF Pro Text
+      fonts:
+        - asset: assets/fonts/SF-Pro-Text-Light.ttf
+
+    - family: Manrope
+      fonts:
+        - asset: assets/fonts/Manrope-Medium.ttf
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/to/font-from-package
+flutter_assets:
+  assets_path: assets/images/
+  output_path: lib/core/themes/styles
+  filename: app_images.dart
+  field_prefix: ''
+  classname: AppImages
+>>>>>>> Stashed changes
