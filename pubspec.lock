@@ -2,7 +2,10 @@
 # See https://dart.dev/tools/pub/glossary#lockfile
 packages:
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e3ec78a4f6a7acdb305b62e3c1513cb5eca8fa16
 <<<<<<< Updated upstream
 =======
   ansicolor:
@@ -21,7 +24,12 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.6.1"
+<<<<<<< HEAD
 >>>>>>> e8cc60812463e24245f76b9eed91e18a236aaa6f
+=======
+=======
+>>>>>>> ccc071e0f3d32df89273f50465817f3e6c8afb7e
+>>>>>>> e3ec78a4f6a7acdb305b62e3c1513cb5eca8fa16
   args:
     dependency: transitive
     description:
@@ -31,9 +39,15 @@ packages:
     source: hosted
     version: "2.5.0"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
 >>>>>>> e8cc60812463e24245f76b9eed91e18a236aaa6f
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> ccc071e0f3d32df89273f50465817f3e6c8afb7e
+>>>>>>> e3ec78a4f6a7acdb305b62e3c1513cb5eca8fa16
   async:
     dependency: transitive
     description:
@@ -120,7 +134,10 @@ packages:
     source: hosted
     version: "4.0.0"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e3ec78a4f6a7acdb305b62e3c1513cb5eca8fa16
 <<<<<<< Updated upstream
 =======
   flutter_native_splash:
@@ -131,7 +148,12 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.1"
+<<<<<<< HEAD
 >>>>>>> e8cc60812463e24245f76b9eed91e18a236aaa6f
+=======
+=======
+>>>>>>> ccc071e0f3d32df89273f50465817f3e6c8afb7e
+>>>>>>> e3ec78a4f6a7acdb305b62e3c1513cb5eca8fa16
   flutter_screenutil:
     dependency: "direct main"
     description:
@@ -149,9 +171,15 @@ packages:
     source: hosted
     version: "2.0.10+1"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
 >>>>>>> e8cc60812463e24245f76b9eed91e18a236aaa6f
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> ccc071e0f3d32df89273f50465817f3e6c8afb7e
+>>>>>>> e3ec78a4f6a7acdb305b62e3c1513cb5eca8fa16
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -180,7 +208,10 @@ packages:
     source: hosted
     version: "14.2.8"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e3ec78a4f6a7acdb305b62e3c1513cb5eca8fa16
 <<<<<<< Updated upstream
 =======
   html:
@@ -191,7 +222,12 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.15.4"
+<<<<<<< HEAD
 >>>>>>> e8cc60812463e24245f76b9eed91e18a236aaa6f
+=======
+=======
+>>>>>>> ccc071e0f3d32df89273f50465817f3e6c8afb7e
+>>>>>>> e3ec78a4f6a7acdb305b62e3c1513cb5eca8fa16
   http:
     dependency: transitive
     description:
@@ -209,7 +245,10 @@ packages:
     source: hosted
     version: "4.0.2"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e3ec78a4f6a7acdb305b62e3c1513cb5eca8fa16
   image:
     dependency: transitive
     description:
@@ -219,7 +258,12 @@ packages:
     source: hosted
     version: "4.2.0"
 >>>>>>> Stashed changes
+<<<<<<< HEAD
 >>>>>>> e8cc60812463e24245f76b9eed91e18a236aaa6f
+=======
+=======
+>>>>>>> ccc071e0f3d32df89273f50465817f3e6c8afb7e
+>>>>>>> e3ec78a4f6a7acdb305b62e3c1513cb5eca8fa16
   leak_tracker:
     dependency: transitive
     description:
@@ -362,10 +406,17 @@ packages:
     source: hosted
     version: "0.7.2"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
 =======
 >>>>>>> e8cc60812463e24245f76b9eed91e18a236aaa6f
+=======
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> ccc071e0f3d32df89273f50465817f3e6c8afb7e
+>>>>>>> e3ec78a4f6a7acdb305b62e3c1513cb5eca8fa16
   typed_data:
     dependency: transitive
     description:
@@ -375,7 +426,10 @@ packages:
     source: hosted
     version: "1.3.2"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e3ec78a4f6a7acdb305b62e3c1513cb5eca8fa16
   universal_io:
     dependency: transitive
     description:
@@ -384,7 +438,12 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.2"
+<<<<<<< HEAD
 >>>>>>> e8cc60812463e24245f76b9eed91e18a236aaa6f
+=======
+=======
+>>>>>>> ccc071e0f3d32df89273f50465817f3e6c8afb7e
+>>>>>>> e3ec78a4f6a7acdb305b62e3c1513cb5eca8fa16
   vector_graphics:
     dependency: transitive
     description:
@@ -410,9 +469,15 @@ packages:
     source: hosted
     version: "1.1.11+1"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
 >>>>>>> e8cc60812463e24245f76b9eed91e18a236aaa6f
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> ccc071e0f3d32df89273f50465817f3e6c8afb7e
+>>>>>>> e3ec78a4f6a7acdb305b62e3c1513cb5eca8fa16
   vector_math:
     dependency: transitive
     description:
@@ -430,10 +495,17 @@ packages:
     source: hosted
     version: "14.2.5"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
 =======
 >>>>>>> e8cc60812463e24245f76b9eed91e18a236aaa6f
+=======
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> ccc071e0f3d32df89273f50465817f3e6c8afb7e
+>>>>>>> e3ec78a4f6a7acdb305b62e3c1513cb5eca8fa16
   web:
     dependency: transitive
     description:
@@ -451,7 +523,10 @@ packages:
     source: hosted
     version: "6.5.0"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e3ec78a4f6a7acdb305b62e3c1513cb5eca8fa16
   yaml:
     dependency: transitive
     description:
@@ -461,7 +536,12 @@ packages:
     source: hosted
     version: "3.1.2"
 >>>>>>> Stashed changes
+<<<<<<< HEAD
 >>>>>>> e8cc60812463e24245f76b9eed91e18a236aaa6f
+=======
+=======
+>>>>>>> ccc071e0f3d32df89273f50465817f3e6c8afb7e
+>>>>>>> e3ec78a4f6a7acdb305b62e3c1513cb5eca8fa16
 sdks:
   dart: ">=3.5.2 <4.0.0"
   flutter: ">=3.19.0"
