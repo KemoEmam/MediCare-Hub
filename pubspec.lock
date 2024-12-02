@@ -149,7 +149,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: ec5592f2f777522c2e544e4dee4e3b1f035f5fd0
+      resolved-ref: "288003d03c504efc95f834110c5ecaeb0e111769"
       url: "https://github.com/KemoEmam/ForbiddenPack.git"
     source: git
     version: "0.0.1"
@@ -157,10 +157,10 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: "6f1b756f6e863259a99135ff3c95026c3cdca17d10ebef2bba2261a25ddc8bbc"
+      sha256: "8660b74171fafae4aa8202100fa2e55349e078281dadc73a241eb8e758534d9d"
       url: "https://pub.dev"
     source: hosted
-    version: "14.3.0"
+    version: "14.6.1"
   html:
     dependency: transitive
     description:
