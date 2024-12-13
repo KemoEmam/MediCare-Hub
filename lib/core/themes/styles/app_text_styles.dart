@@ -19,6 +19,11 @@ class AppTextStyles {
     fontWeight: FontWeight.w400,
     fontSize: 14.sp,
   );
+  static TextStyle interRegular12 = TextStyle(
+    fontFamily: 'Inter',
+    fontWeight: FontWeight.w400,
+    fontSize: 12.sp,
+  );
 
   static TextStyle sfProDisplayMedium14 = TextStyle(
     fontFamily: 'SF Pro Display',

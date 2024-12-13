@@ -149,7 +149,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "288003d03c504efc95f834110c5ecaeb0e111769"
+      resolved-ref: "136d7712a2812fd30b0ad78f55015ab1690277fe"
       url: "https://github.com/KemoEmam/ForbiddenPack.git"
     source: git
     version: "0.0.1"
