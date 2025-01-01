@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:forbidden_pack/forbidden_pack.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
