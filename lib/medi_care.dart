@@ -13,6 +13,9 @@ class MediCare extends StatelessWidget {
       child: MaterialApp.router(
         routerConfig: router,
         debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          scaffoldBackgroundColor: Colors.white,
+        ),
       ),
     );
   }

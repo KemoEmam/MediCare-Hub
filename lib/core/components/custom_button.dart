@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:forbidden_pack/forbidden_pack.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -25,7 +26,7 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        minimumSize: const Size(double.infinity, 54),
+        minimumSize: const Size(double.infinity, 60),
         textStyle: textStyle ?? TextStyle(fontSize: fontSize),
         foregroundColor: textColor,
         backgroundColor: buttonColor,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medi_care_hub/core/components/custom_button.dart';
+import 'package:medi_care_hub/core/router/routes.dart';
 import 'package:medi_care_hub/core/themes/styles/app_colors.dart';
 import 'package:medi_care_hub/core/themes/styles/app_text_styles.dart';
 
@@ -25,7 +27,9 @@ class GetStartedAndDescription extends StatelessWidget {
           CustomButton(
               text: 'Get Started',
               textStyle: AppTextStyles.interSemiBold16,
-              onPressed: () {},
+              onPressed: () {
+                context.go(Routes.signin);
+              },
               buttonColor: AppColors.primaryColor)
         ],
       ),
