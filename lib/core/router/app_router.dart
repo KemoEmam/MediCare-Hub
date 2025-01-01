@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medi_care_hub/core/router/routes.dart';
-import 'package:medi_care_hub/features/login/presentation/views/signin_view.dart';
+import 'package:medi_care_hub/features/signin/presentation/views/signin_view.dart';
 import 'package:medi_care_hub/features/onboarding/presentation/views/onboarding_view.dart';
 
 //*add the packages: go_router

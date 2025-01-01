@@ -17,6 +17,7 @@ class _PasswordFieldState extends State<PasswordField> {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
+      fillColor: const Color(0xfffdfdff),
       borderRadius: 16,
       obscureText: obscureText,
       onSaved: widget.onSaved,

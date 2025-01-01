@@ -22,7 +22,7 @@ class SigninHeader extends StatelessWidget {
           "We're excited to have you back, can't wait to\nsee what you've been up to since you last\nlogged in.",
           style: AppTextStyles.interRegular14.copyWith(
             color: AppColors.textColor,
-            height: 1.8.sp,
+            height: 1.3.sp,
           ),
         ),
       ],

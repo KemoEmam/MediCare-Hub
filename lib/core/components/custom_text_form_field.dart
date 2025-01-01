@@ -17,6 +17,7 @@ class CustomTextFormField extends StatelessWidget {
   final Color enabledBorderColor;
   final void Function(String?)? onSaved;
   final double borderRadius; // New property for border radius
+  final Color? fillColor; // Optional fill color field
 
   const CustomTextFormField({
     super.key,
@@ -34,7 +35,8 @@ class CustomTextFormField extends StatelessWidget {
     this.prefixIconColor,
     this.suffixIconColor,
     this.onSaved,
-    this.borderRadius = 16, // Default border radius
+    this.borderRadius = 16,
+    this.fillColor, // Default border radius
   });
 
   @override
@@ -57,6 +59,8 @@ class CustomTextFormField extends StatelessWidget {
         prefixIconColor: prefixIconColor,
         suffixIcon: suffixIcon,
         suffixIconColor: suffixIconColor ?? Colors.grey,
+        fillColor: fillColor,
+        filled: fillColor != null,
         border: _borderBuilder(borderColor),
         focusedBorder: _borderBuilder(focusedBorderColor),
         enabledBorder: _borderBuilder(enabledBorderColor),

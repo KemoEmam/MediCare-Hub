@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:forbidden_pack/forbidden_pack.dart';
 import 'package:medi_care_hub/core/components/custom_text_button.dart';
 import 'package:medi_care_hub/core/themes/styles/app_text_styles.dart';
-import 'package:medi_care_hub/features/login/presentation/views/widgets/custom_check_box.dart';
+import 'package:medi_care_hub/features/signin/presentation/views/widgets/custom_check_box.dart';
 
 import '../../../../../core/themes/styles/app_colors.dart';
 
