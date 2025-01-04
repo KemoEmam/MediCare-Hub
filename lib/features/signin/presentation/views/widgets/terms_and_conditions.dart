@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medi_care_hub/core/themes/styles/app_colors.dart';
 
 class TermsAndConditions extends StatelessWidget {
   final String labelFirstPart;
@@ -33,7 +34,7 @@ class TermsAndConditions extends StatelessWidget {
             text: labelFirstPart,
             style: firstPartStyle ??
                 const TextStyle(
-                  color: Color(0xFFC8C8C8),
+                  color: AppColors.textColor,
                   fontSize: 16.0,
                 ),
           ),
@@ -50,7 +51,7 @@ class TermsAndConditions extends StatelessWidget {
             text: labelfourthPart,
             style: fourthPartStyle ??
                 const TextStyle(
-                  color: Color(0xFFC8C8C8),
+                  color: AppColors.textColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 16.0,
                 ),
