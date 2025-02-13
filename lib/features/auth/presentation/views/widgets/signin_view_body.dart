@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medi_care_hub/core/components/custom_button.dart';
 import 'package:medi_care_hub/core/components/custom_text_form_field.dart';
+import 'package:medi_care_hub/core/router/routes.dart';
 import 'package:medi_care_hub/core/themes/styles/app_colors.dart';
 import 'package:medi_care_hub/core/themes/styles/app_text_styles.dart';
 import 'package:medi_care_hub/features/auth/presentation/manager/signin_cubit/signin_cubit.dart';
@@ -58,17 +60,8 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                     onSaved: (value) {
                       password = value!;
                     },
-                    // You can also add a validator here if needed.
                   ),
-                  SizedBox(height: 16.h),
-                  // CustomPhoneFormField(
-                  //   labelText: 'Phone Number',
-                  //   labelTextStyle: AppTextStyles.interMedium12
-                  //       .copyWith(color: const Color(0xFF949D9E)),
-                  //   hintText: 'Phone Number',
-                  //   hintTextStyle: AppTextStyles.interMedium12
-                  //       .copyWith(color: const Color(0xffC2C2C2)),
-                  // ),
+
                   SizedBox(height: 32.h),
 
                   const ForgotPasswordHeader(),
@@ -95,6 +88,7 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                     actionText: "Sign Up",
                     onTap: () {
                       // Navigate to Sign Up view
+                      context.go(Routes.signup);
                     },
                   ),
                 ],

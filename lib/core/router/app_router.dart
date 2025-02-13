@@ -7,10 +7,10 @@ import 'package:medi_care_hub/features/auth/domain/repos/signin_repo.dart';
 import 'package:medi_care_hub/features/auth/presentation/manager/auth_cubit/auth_cubit.dart';
 import 'package:medi_care_hub/features/auth/presentation/manager/signin_cubit/signin_cubit.dart';
 import 'package:medi_care_hub/features/auth/presentation/views/signin_view.dart';
+import 'package:medi_care_hub/features/auth/presentation/views/signup_view.dart';
 import 'package:medi_care_hub/features/home/presentation/views/home_view.dart';
 import 'package:medi_care_hub/features/onboarding/presentation/views/onboarding_view.dart';
 
-//*add the packages: go_router
 final _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: '_root');
 
 final router = GoRouter(
@@ -56,10 +56,10 @@ final router = GoRouter(
         child: const HomeView(),
       ),
     ),
-    // GoRoute(
-    //   path: Routes.otp,
-    //   builder: (context, state) => const OtpView(),
-    // )
+    GoRoute(
+      path: Routes.signup,
+      builder: (context, state) => const SignupView(),
+    )
 
     // StatefulShellRoute.indexedStack(
     //   branches: [
