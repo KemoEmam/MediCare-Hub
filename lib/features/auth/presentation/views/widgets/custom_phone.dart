@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medi_care_hub/core/themes/styles/app_text_styles.dart';
 import 'package:phone_form_field/phone_form_field.dart';
 
 class CustomPhoneFormField extends StatelessWidget {
@@ -38,11 +39,12 @@ class CustomPhoneFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PhoneFormField(
-      initialValue: const PhoneNumber(isoCode: IsoCode.SA, nsn: ''),
+      initialValue: const PhoneNumber(isoCode: IsoCode.EG, nsn: ''),
       decoration: InputDecoration(
         labelText: labelText, //label text instead of hint text
-        labelStyle: labelTextStyle,
-        //  ?? AppTextStyles.interMedium12.copyWith(color: const Color(0xFF949D9E)),
+        labelStyle: labelTextStyle ??
+            AppTextStyles.interMedium14
+                .copyWith(color: const Color(0xffC2C2C2)),
         hintText: hintText,
         hintStyle: hintTextStyle,
         prefixIcon: prefixIcon,
@@ -64,7 +66,7 @@ class CustomPhoneFormField extends StatelessWidget {
         countries: [
           // Add the countries you want to display here
           IsoCode.EG,
-          IsoCode.SA,
+          // IsoCode.SA,
         ],
       ),
       onChanged: onChanged,
@@ -72,10 +74,10 @@ class CustomPhoneFormField extends StatelessWidget {
       isCountrySelectionEnabled: true,
       isCountryButtonPersistent: true,
       countryButtonStyle: const CountryButtonStyle(
-        // showDropdownIcon: false, // Uncomment if only one country is displayed
+        showDropdownIcon: false, // Uncomment if only one country is displayed
         showDialCode: true,
         showFlag: true,
-        flagSize: 16,
+        flagSize: 18,
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medi_care_hub/core/themes/styles/app_colors.dart';
+import 'package:medi_care_hub/core/themes/styles/app_text_styles.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final String hintText;
@@ -54,7 +55,9 @@ class CustomTextFormField extends StatelessWidget {
       obscureText: obscureText,
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: hintTextStyle,
+        hintStyle: hintTextStyle ??
+            AppTextStyles.interMedium14
+                .copyWith(color: const Color(0xffC2C2C2)),
         prefixIcon: prefixIcon,
         prefixIconColor: prefixIconColor,
         suffixIcon: suffixIcon,
