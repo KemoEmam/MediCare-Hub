@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medi_care_hub/core/themes/styles/app_text_styles.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -37,10 +38,7 @@ class CustomButton extends StatelessWidget {
       child: Text(
         text,
         style: textStyle?.copyWith(color: textColor) ??
-            TextStyle(
-                fontSize: fontSize ?? 16,
-                color: textColor,
-                fontWeight: FontWeight.bold),
+            AppTextStyles.interSemiBold16,
       ),
     );
   }

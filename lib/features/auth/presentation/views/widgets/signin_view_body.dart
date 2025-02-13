@@ -4,13 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medi_care_hub/core/components/custom_button.dart';
 import 'package:medi_care_hub/core/components/custom_text_form_field.dart';
+import 'package:medi_care_hub/core/components/sign_header.dart';
+import 'package:medi_care_hub/core/constants/constants.dart';
 import 'package:medi_care_hub/core/router/routes.dart';
 import 'package:medi_care_hub/core/themes/styles/app_colors.dart';
-import 'package:medi_care_hub/core/themes/styles/app_text_styles.dart';
 import 'package:medi_care_hub/features/auth/presentation/manager/signin_cubit/signin_cubit.dart';
 import 'package:medi_care_hub/features/auth/presentation/views/widgets/account_action_text.dart';
 import 'package:medi_care_hub/features/auth/presentation/views/widgets/password_field.dart';
-import 'package:medi_care_hub/features/auth/presentation/views/widgets/signin_header.dart';
 import 'package:medi_care_hub/features/auth/presentation/views/widgets/terms_and_conditions.dart';
 
 import 'forgot_password_header.dart';
@@ -31,45 +31,39 @@ class _SigninViewBodyState extends State<SigninViewBody> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 32.w),
+        padding: EdgeInsets.symmetric(
+            horizontal: kHorizontalPadding, vertical: kVerticalPadding),
         child: Column(
           children: [
-            SizedBox(height: 50.h),
-            const SigninHeader(),
+            const SignHeader(
+              title: "Welcome back!",
+              description:
+                  "We're excited to have you back, can't wait to\nsee what you've been up to since you last\nlogged in.",
+            ),
             SizedBox(height: 36.h),
             Form(
               key: formKey,
               autovalidateMode: autovalidateMode,
               child: Column(
                 children: [
-                  // Email Field
                   CustomTextFormField(
                     onSaved: (value) {
                       email = value!.trim();
                     },
                     hintText: 'Email',
-                    hintTextStyle: AppTextStyles.interMedium14
-                        .copyWith(color: const Color(0xffC2C2C2)),
                     fillColor: const Color(0xfffdfdff),
                     keyboardType: TextInputType.emailAddress,
                   ),
                   SizedBox(height: 16.h),
-
-                  // Password Field
                   PasswordField(
                     onSaved: (value) {
                       password = value!;
                     },
                   ),
-
                   SizedBox(height: 32.h),
-
                   const ForgotPasswordHeader(),
                   SizedBox(height: 32.h),
-
-                  // Login Button
                   CustomButton(
-                    textStyle: AppTextStyles.interSemiBold16,
                     text: "Login",
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
@@ -87,8 +81,8 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                     textBeforeAction: "Don't have an account?",
                     actionText: "Sign Up",
                     onTap: () {
-                      // Navigate to Sign Up view
-                      context.go(Routes.signup);
+                      // Navigate to Sign Up view and navigate back to Sign In view
+                      context.push(Routes.signup);
                     },
                   ),
                 ],

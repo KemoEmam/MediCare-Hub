@@ -8,7 +8,9 @@ class SignupView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SafeArea(
-        child: SignupViewBody(),
+        child: SafeArea(
+          child: SignupViewBody(),
+        ),
       ),
     );
   }
