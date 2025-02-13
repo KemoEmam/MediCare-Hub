@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medi_care_hub/core/router/routes.dart';
-import 'package:medi_care_hub/features/signin/presentation/views/signin_view.dart';
+import 'package:medi_care_hub/core/services/service_locator.dart';
+import 'package:medi_care_hub/features/auth/domain/repos/signin_repo.dart';
+import 'package:medi_care_hub/features/auth/presentation/manager/auth_cubit/auth_cubit.dart';
+import 'package:medi_care_hub/features/auth/presentation/manager/signin_cubit/signin_cubit.dart';
+import 'package:medi_care_hub/features/auth/presentation/views/signin_view.dart';
+import 'package:medi_care_hub/features/home/presentation/views/home_view.dart';
 import 'package:medi_care_hub/features/onboarding/presentation/views/onboarding_view.dart';
 
 //*add the packages: go_router
@@ -38,8 +44,22 @@ final router = GoRouter(
     ),
     GoRoute(
       path: Routes.signin,
-      builder: (context, state) => const SigninView(),
+      builder: (context, state) => BlocProvider(
+        create: (context) => SigninCubit(sl<SigninRepo>()),
+        child: const SigninView(),
+      ),
     ),
+    GoRoute(
+      path: Routes.home,
+      builder: (context, state) => BlocProvider(
+        create: (context) => AuthCubit()..loadUser(),
+        child: const HomeView(),
+      ),
+    ),
+    // GoRoute(
+    //   path: Routes.otp,
+    //   builder: (context, state) => const OtpView(),
+    // )
 
     // StatefulShellRoute.indexedStack(
     //   branches: [
