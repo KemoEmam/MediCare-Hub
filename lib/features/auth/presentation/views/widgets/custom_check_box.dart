@@ -1,67 +1,47 @@
 import 'package:flutter/material.dart';
 
-class CustomCheckbox extends StatefulWidget {
-  final bool initialValue;
+class CustomCheckbox extends StatelessWidget {
+  final bool isChecked;
   final ValueChanged<bool> onChanged;
   final Color activeColor;
   final Color checkColor;
   final Color backgroundColor;
   final double checkboxSize;
-  final double borderThickness; // New optional parameter for border thickness
+  final double borderThickness;
 
   const CustomCheckbox({
     super.key,
     required this.onChanged,
-    this.initialValue = false,
+    required this.isChecked,
     this.activeColor = Colors.transparent,
     this.checkColor = Colors.white,
-    this.backgroundColor = Colors.blue, // Default to blue if not provided
+    this.backgroundColor = Colors.blue,
     this.checkboxSize = 24.0,
     this.borderThickness = 1.0,
   });
 
   @override
-  State<CustomCheckbox> createState() => _CustomCheckboxState();
-}
-
-class _CustomCheckboxState extends State<CustomCheckbox> {
-  bool _isChecked = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _isChecked = widget.initialValue;
-  }
-
-  void _toggleCheckbox(bool? newValue) {
-    setState(() {
-      _isChecked = newValue ?? false;
-    });
-    widget.onChanged(_isChecked);
-  }
-
-  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _toggleCheckbox(!_isChecked),
-      child: Container(
-        width: widget.checkboxSize,
-        height: widget.checkboxSize,
+      onTap: () => onChanged(!isChecked),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+        width: checkboxSize,
+        height: checkboxSize,
         decoration: BoxDecoration(
-          color: _isChecked
-              ? widget.backgroundColor
-              : Colors.transparent, // Background color
+          color: isChecked ? backgroundColor : Colors.transparent,
           border: Border.all(
-            color: _isChecked ? widget.activeColor : Colors.grey,
-            width: widget.borderThickness,
+            color: isChecked ? activeColor : Colors.grey,
+            width: borderThickness,
           ),
           borderRadius: BorderRadius.circular(6.0),
         ),
-        child: _isChecked
+        child: isChecked
             ? Icon(
                 Icons.check,
-                size: widget.checkboxSize - 8,
-                color: widget.checkColor,
+                size: checkboxSize - 8,
+                color: checkColor,
               )
             : null,
       ),

@@ -5,7 +5,8 @@ import 'package:medi_care_hub/core/router/routes.dart';
 import 'package:medi_care_hub/core/services/service_locator.dart';
 import 'package:medi_care_hub/features/auth/domain/repos/signin_repo.dart';
 import 'package:medi_care_hub/features/auth/presentation/manager/auth_cubit/auth_cubit.dart';
-import 'package:medi_care_hub/features/auth/presentation/manager/signin_cubit/signin_cubit.dart';
+import 'package:medi_care_hub/features/auth/presentation/manager/auth_ui_actions/auth_ui_actions_cubit.dart';
+import 'package:medi_care_hub/features/auth/presentation/manager/signin/signin_cubit.dart';
 import 'package:medi_care_hub/features/auth/presentation/views/signin_view.dart';
 import 'package:medi_care_hub/features/auth/presentation/views/signup_view.dart';
 import 'package:medi_care_hub/features/home/presentation/views/home_view.dart';
@@ -46,7 +47,17 @@ final router = GoRouter(
       path: Routes.signin,
       builder: (context, state) => BlocProvider(
         create: (context) => SigninCubit(sl<SigninRepo>()),
-        child: const SigninView(),
+        child: BlocProvider(
+          create: (context) => AuthUiActionsCubit(),
+          child: const SigninView(),
+        ),
+      ),
+    ),
+    GoRoute(
+      path: Routes.signup,
+      builder: (context, state) => BlocProvider(
+        create: (context) => AuthUiActionsCubit(),
+        child: const SignupView(),
       ),
     ),
     GoRoute(
@@ -56,10 +67,6 @@ final router = GoRouter(
         child: const HomeView(),
       ),
     ),
-    GoRoute(
-      path: Routes.signup,
-      builder: (context, state) => const SignupView(),
-    )
 
     // StatefulShellRoute.indexedStack(
     //   branches: [

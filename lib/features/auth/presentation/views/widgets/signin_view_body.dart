@@ -6,29 +6,23 @@ import 'package:medi_care_hub/core/components/custom_button.dart';
 import 'package:medi_care_hub/core/components/custom_text_form_field.dart';
 import 'package:medi_care_hub/core/components/sign_header.dart';
 import 'package:medi_care_hub/core/constants/constants.dart';
+import 'package:medi_care_hub/core/helper/app_regex.dart';
 import 'package:medi_care_hub/core/router/routes.dart';
 import 'package:medi_care_hub/core/themes/styles/app_colors.dart';
-import 'package:medi_care_hub/features/auth/presentation/manager/signin_cubit/signin_cubit.dart';
+import 'package:medi_care_hub/features/auth/presentation/manager/auth_ui_actions/auth_ui_actions_cubit.dart';
+import 'package:medi_care_hub/features/auth/presentation/manager/signin/signin_cubit.dart';
 import 'package:medi_care_hub/features/auth/presentation/views/widgets/account_action_text.dart';
 import 'package:medi_care_hub/features/auth/presentation/views/widgets/password_field.dart';
 import 'package:medi_care_hub/features/auth/presentation/views/widgets/terms_and_conditions.dart';
 
 import 'forgot_password_header.dart';
 
-class SigninViewBody extends StatefulWidget {
+class SigninViewBody extends StatelessWidget {
   const SigninViewBody({super.key});
 
   @override
-  State<SigninViewBody> createState() => _SigninViewBodyState();
-}
-
-class _SigninViewBodyState extends State<SigninViewBody> {
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
-
-  late String email, password;
-  @override
   Widget build(BuildContext context) {
+    final cubit = context.read<AuthUiActionsCubit>();
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(
@@ -42,22 +36,29 @@ class _SigninViewBodyState extends State<SigninViewBody> {
             ),
             SizedBox(height: 36.h),
             Form(
-              key: formKey,
-              autovalidateMode: autovalidateMode,
+              key: cubit.signinFormKey,
+              autovalidateMode: cubit.signinAutovalidateMode,
               child: Column(
                 children: [
                   CustomTextFormField(
+                    labelText: 'Email',
+                    regex: AppRegex.email,
+                    regexErrorMessage: "Invalid email address",
                     onSaved: (value) {
-                      email = value!.trim();
+                      cubit.signinEmail = value!.trim();
                     },
-                    hintText: 'Email',
                     fillColor: const Color(0xfffdfdff),
-                    keyboardType: TextInputType.emailAddress,
                   ),
                   SizedBox(height: 16.h),
-                  PasswordField(
-                    onSaved: (value) {
-                      password = value!;
+                  BlocBuilder<AuthUiActionsCubit, AuthUiActionsState>(
+                    builder: (context, state) {
+                      return PasswordField(
+                        obscureText: cubit.signinObscureText,
+                        onToggleObscure: () => cubit.signinToggleObscureText(),
+                        onSaved: (value) {
+                          cubit.signinPassword = value!;
+                        },
+                      );
                     },
                   ),
                   SizedBox(height: 32.h),
@@ -66,11 +67,7 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                   CustomButton(
                     text: "Login",
                     onPressed: () {
-                      if (formKey.currentState!.validate()) {
-                        formKey.currentState!.save();
-                        context.read<SigninCubit>().signin(email, password);
-                        FocusManager.instance.primaryFocus?.unfocus();
-                      }
+                      toggleSignin(cubit, context);
                     },
                     buttonColor: AppColors.primaryColor,
                   ),
@@ -81,7 +78,6 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                     textBeforeAction: "Don't have an account?",
                     actionText: "Sign Up",
                     onTap: () {
-                      // Navigate to Sign Up view and navigate back to Sign In view
                       context.push(Routes.signup);
                     },
                   ),
@@ -92,5 +88,15 @@ class _SigninViewBodyState extends State<SigninViewBody> {
         ),
       ),
     );
+  }
+
+  void toggleSignin(AuthUiActionsCubit cubit, BuildContext context) {
+    if (cubit.signinFormKey.currentState!.validate()) {
+      cubit.signinFormKey.currentState!.save();
+      context
+          .read<SigninCubit>()
+          .signin(cubit.signinEmail, cubit.signinPassword);
+      FocusManager.instance.primaryFocus?.unfocus();
+    }
   }
 }

@@ -3,7 +3,7 @@ import 'package:medi_care_hub/core/services/api_no_refresh_service.dart';
 import 'package:medi_care_hub/core/services/token_service.dart';
 import 'package:medi_care_hub/features/auth/data/repo_impl/signin_repo_impl.dart';
 import 'package:medi_care_hub/features/auth/domain/repos/signin_repo.dart';
-import 'package:medi_care_hub/features/auth/presentation/manager/signin_cubit/signin_cubit.dart';
+import 'package:medi_care_hub/features/auth/presentation/manager/signin/signin_cubit.dart';
 
 final sl = GetIt.instance;
 

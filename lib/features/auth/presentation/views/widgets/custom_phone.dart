@@ -3,8 +3,6 @@ import 'package:medi_care_hub/core/themes/styles/app_text_styles.dart';
 import 'package:phone_form_field/phone_form_field.dart';
 
 class CustomPhoneFormField extends StatelessWidget {
-  final String hintText;
-  final TextStyle? hintTextStyle;
   final Widget? prefixIcon;
   final Color? prefixIconColor;
   final Widget? suffixIcon;
@@ -20,8 +18,6 @@ class CustomPhoneFormField extends StatelessWidget {
 
   const CustomPhoneFormField({
     super.key,
-    required this.hintText,
-    this.hintTextStyle,
     this.prefixIcon,
     this.prefixIconColor,
     this.suffixIcon,
@@ -41,19 +37,21 @@ class CustomPhoneFormField extends StatelessWidget {
     return PhoneFormField(
       initialValue: const PhoneNumber(isoCode: IsoCode.EG, nsn: ''),
       decoration: InputDecoration(
-        labelText: labelText, //label text instead of hint text
+        labelText: labelText,
         labelStyle: labelTextStyle ??
             AppTextStyles.interMedium14
                 .copyWith(color: const Color(0xffC2C2C2)),
-        hintText: hintText,
-        hintStyle: hintTextStyle,
         prefixIcon: prefixIcon,
         prefixIconColor: prefixIconColor,
         suffixIcon: suffixIcon,
         suffixIconColor: suffixIconColor ?? Colors.grey,
         fillColor: fillColor,
         filled: fillColor != null,
-        border: _borderBuilder(borderColor),
+        border: OutlineInputBorder(
+          borderRadius:
+              BorderRadius.circular(borderRadius), // Use borderRadius here
+          borderSide: BorderSide(color: borderColor),
+        ),
         focusedBorder: _borderBuilder(focusedBorderColor),
         enabledBorder: _borderBuilder(enabledBorderColor),
       ),
@@ -84,8 +82,7 @@ class CustomPhoneFormField extends StatelessWidget {
 
   OutlineInputBorder _borderBuilder(Color color, {double width = 1.2}) {
     return OutlineInputBorder(
-      borderRadius:
-          BorderRadius.circular(borderRadius), // Use borderRadius here
+      borderRadius: BorderRadius.circular(borderRadius),
       borderSide: BorderSide(color: color, width: width),
     );
   }
